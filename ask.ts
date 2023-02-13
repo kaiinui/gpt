@@ -1,7 +1,7 @@
 import { Command } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts"
 import { Configuration, OpenAIApi } from "npm:openai";
 
-const key = await Deno.readTextFileSync(Deno.env.get("HOME") + "/.openapikey");
+const key = await Deno.readTextFileSync(Deno.env.get("HOME") + "/.openaikey");
 const configuration = new Configuration({
   apiKey: key
 });
