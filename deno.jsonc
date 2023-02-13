@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "run": "deno run --allow-net --allow-read --allow-env ask.ts",
+    "install": "deno install -f --allow-net --allow-read --allow-env ask.ts"
+  }
+}
