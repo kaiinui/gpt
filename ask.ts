@@ -15,9 +15,12 @@ async function main() {
     .option("-i, --input <filepath>", "filepath to input as an prompt.")
     .option("-t, --translation <language>", "translation to the given language.")
     .option("-s, --style <style>", "translation style.")
-    .action(async (opts) => {
+    .arguments("[prompt]")
+    .action(async (opts, ...args) => {
       let toask = "";
-      if (opts.input) {
+      if (args.length > 0) {
+        toask = args[0] ?? "";
+      } else if (opts.input) {
         toask = Deno.readTextFileSync(opts.input);
       } else {
         toask = prompt("Enter the prompt:") ?? "";
